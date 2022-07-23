@@ -25,3 +25,5 @@
 * Export Preview lead/end spacing may not appear correct in the box, but should be exported correctly. 
 * If you have any issues or find any bugs, please let me know
 * If you have any ideas for improvements, feel free to suggest them
+
+If anyone knows why some fonts and not others have a ton of leading space, please let me know. I can't figure out the issue.
