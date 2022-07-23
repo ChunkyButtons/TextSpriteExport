@@ -9,48 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="Fonts\IBMPlexMono-Bold.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\IBMPlexMono-BoldItalic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\IBMPlexMono-ExtraLight.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\IBMPlexMono-ExtraLightItalic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\IBMPlexMono-Italic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\IBMPlexMono-Light.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\IBMPlexMono-LightItalic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\IBMPlexMono-Medium.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\IBMPlexMono-MediumItalic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\IBMPlexMono-Regular.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\IBMPlexMono-SemiBold.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\IBMPlexMono-SemiBoldItalic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\IBMPlexMono-Thin.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Fonts\IBMPlexMono-ThinItalic.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
     <None Update="Fonts\NotoSansMono-Black.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>

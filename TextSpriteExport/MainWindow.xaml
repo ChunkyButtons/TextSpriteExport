@@ -9,7 +9,20 @@
 	<Grid HorizontalAlignment="Left" VerticalAlignment="Top">
 		<StackPanel Orientation="Vertical" Margin="10,10,0,0">
 			<ComboBox x:Name="CBFontFamily" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,10,5" SelectionChanged="CBFontFamily_SelectionChanged"/>
-			<ComboBox x:Name="CBTextFormat" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,5" SelectionChanged="CBTextFormat_SelectionChanged"/>
+			<StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+				<StackPanel Orientation="Vertical">
+					<Label Content="Text Format:"></Label>
+					<ComboBox x:Name="CBTextFormat" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,5" SelectionChanged="CBTextFormat_SelectionChanged"/>
+				</StackPanel>
+				<StackPanel Orientation="Vertical">
+					<Label Content="Text Rendering:"></Label>
+					<ComboBox x:Name="CBTextRendering" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,0,0,5" SelectionChanged="CBTextRendering_SelectionChanged"/>
+				</StackPanel>
+				<StackPanel Orientation="Vertical">
+					<Label Content="Text Hinting:"></Label>
+					<ComboBox x:Name="CBTextHinting" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,0,0,5" SelectionChanged="CBTextHinting_SelectionChanged"/>
+				</StackPanel>
+			</StackPanel>
 			<StackPanel Orientation="Horizontal" Margin="0,0,0,5">
 				<CheckBox x:Name="CheckBoxBold" Content="Bold" Canvas.Left="10" Canvas.Top="37" Checked="CheckBoxBold_Checked" Unchecked="CheckBoxBold_Unchecked"/>
 				<CheckBox x:Name="CheckBoxItalic" Content="Italic" Canvas.Left="74" Canvas.Top="37" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="CheckBoxItalic_Checked" Unchecked="CheckBoxItalic_Unchecked" Margin="15,0,0,0"/>
@@ -48,7 +61,7 @@
 			<ScrollViewer x:Name="SVRender" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Width="600" Height="298" HorizontalAlignment="Left" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" Foreground="Black">
 				<Grid x:Name="RenderCanvas" HorizontalAlignment="Left" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True">
 					<Rectangle x:Name="ExportBackground" Fill="Magenta"/>
-					<Label x:Name="TextBlockTest" FontFamily="IBM Plex Mono Light" Content="Text Output" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="24"/>
+					<Label x:Name="TextBlockTest" FontFamily="Consolas" Content="Text Output" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="24"/>
 					<Canvas x:Name="SpriteGrid" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 				</Grid>
 			</ScrollViewer>

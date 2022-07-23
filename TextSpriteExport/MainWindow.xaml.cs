@@ -51,13 +51,22 @@ namespace TextSpriteExport
 				CBFontFamily.Items.Add(curFF.ToString());
 			}
 
-			UpdateRenderGrid();
-
 			CBTextFormat.Items.Add("Display");
 			CBTextFormat.Items.Add("Ideal");
-			CBTextFormat.SelectedIndex = 0;			
+			CBTextFormat.SelectedIndex = 0;
+
+			CBTextRendering.Items.Add("Aliased");
+			CBTextRendering.Items.Add("Grayscale");
+			CBTextRendering.Items.Add("ClearType");
+			CBTextRendering.SelectedIndex = 0;
+
+			CBTextHinting.Items.Add("Fixed");
+			CBTextHinting.Items.Add("Animated");
+			CBTextHinting.SelectedIndex = 0;
 
 			TextBlockTest.SnapsToDevicePixels = true;
+
+			UpdateRenderGrid();
 		}
 		
 		private void UpdateRenderGrid(){
@@ -656,6 +665,35 @@ namespace TextSpriteExport
 			SolidColorBrush oldBrush = (SolidColorBrush)ExportBackground.Fill;
 
 			ExportBackground.Fill = new SolidColorBrush(Color.FromArgb((byte)intOutput, oldBrush.Color.R, oldBrush.Color.G, oldBrush.Color.B));
+		}
+
+		private void CBTextRendering_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+			if (CBTextRendering.SelectedItem.ToString() == "Aliased") {
+				TextOptions.SetTextRenderingMode(TextBlockTest, TextRenderingMode.Aliased);
+			}
+
+			if (CBTextRendering.SelectedItem.ToString() == "Grayscale") {
+				TextOptions.SetTextRenderingMode(TextBlockTest, TextRenderingMode.Grayscale);
+			}
+
+			if (CBTextRendering.SelectedItem.ToString() == "ClearType") {
+				TextOptions.SetTextRenderingMode(TextBlockTest, TextRenderingMode.ClearType);
+			}
+
+			UpdateRenderGrid();
+		}
+
+		private void CBTextHinting_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+			if (CBTextHinting.SelectedItem.ToString() == "Fixed") {
+				TextOptions.SetTextHintingMode(TextBlockTest, TextHintingMode.Fixed);
+			}
+
+			if (CBTextHinting.SelectedItem.ToString() == "Animated") {
+				TextOptions.SetTextHintingMode(TextBlockTest, TextHintingMode.Animated);
+			}
+
+
+			UpdateRenderGrid();
 		}
 	}
 }
