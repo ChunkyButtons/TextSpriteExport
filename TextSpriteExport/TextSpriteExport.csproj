@@ -159,6 +159,9 @@
     <None Update="Fonts\NotoSansMono_SemiCondensed-Thin.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
+    <None Update="Fonts\readme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Fonts\RedHatMono-Bold.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
