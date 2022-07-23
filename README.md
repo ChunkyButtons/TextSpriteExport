@@ -9,6 +9,8 @@
 3. Select a font from the drop down, if it detects a font is not monospaced there will be a warning
 4. Modify the parameters as desired
     * Text Format Dropdown: Display/Ideal will set the text format, Display is recommended as it is more consistent
+    * Text Rendering Dropdown: Set the text rendering according to preference. ClearType/Grayscale anti-aliasing or aliased. Anti-aliasing may cause issues with colored backgrounds
+    * Text Hinting Dropdown: Set the text hinting according to preference. Fixed is recommended as it appears to be more clear
     * Show Grid checkbox: will show/hide a grid overlay for the sprites
     * Snap to Device Pixels checkbox: will enable "Snap to Device Pixels" setting on all children of the export preview (Default is on, but can't see a difference for myself)
     * Use Ascii checkbox: will allow up to 256 ascii encoded chars versus the standard 128 character UTF8 encoding (Affects char minimum and maximum limits, not supported by all fonts)
