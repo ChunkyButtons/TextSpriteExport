@@ -1,6 +1,6 @@
 # TextSpriteExport
 
-## A WPF application that will export monospaced fonts as a .png image
+## A WPF application that will export monospaced fonts as a .png image sprite sheet
 
 ### Guide
 
