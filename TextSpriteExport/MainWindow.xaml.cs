@@ -205,18 +205,24 @@ namespace TextSpriteExport
 
 			for (int i = userCharMin; i < userCharMax; i++){
 				try{
-				asciiArray[i] = (byte)i;
-				}catch{
-					MessageBox.Show(i.ToString());
+					asciiArray[i] = (byte)i;
+				}catch(Exception err){
+					MessageBox.Show(err.ToString() + "\n Ascii Char Num: " + i.ToString());
 				}
 			}
 
-			string stringRequest = Encoding.ASCII.GetString(asciiArray).Trim();
+			string stringRequest = Encoding.GetEncoding("iso-8859-1").GetString(asciiArray).Trim();
+			//no longer uses Encoding.ASCII, that does not actually go to 256 bytes for the extended characters
 
 			StringBuilder finalOutputSB = new StringBuilder();
 
 			int curCnt = 0;
 			for (int coli = userCharMin; coli < stringRequest.Length; coli++) {
+				if (char.IsWhiteSpace(stringRequest[coli]) == true || char.IsControl(stringRequest[coli]) == true) {
+					//MessageBox.Show($"Char: {charSizes[chari].ToString()} -- Num: {chari.ToString()}");
+					continue;
+				}
+
 				finalOutputSB.Append(stringRequest[coli]);
 				curCnt++;
 
@@ -227,7 +233,7 @@ namespace TextSpriteExport
 				}
 			}
 
-			TextBlockTest.Content = finalOutputSB.ToString();
+			TextBlockTest.Text = finalOutputSB.ToString();
 	
 		}
 
@@ -246,10 +252,11 @@ namespace TextSpriteExport
 			for (int i = userCharMin; i < userCharMax; i++){
 				char tempChar =  (char)i;
 
-				if(char.IsWhiteSpace(tempChar) || char.IsControl(tempChar)){
+				if (char.IsWhiteSpace(tempChar) == true || char.IsControl(tempChar) == true) {
+					//MessageBox.Show($"Char: {charSizes[chari].ToString()} -- Num: {chari.ToString()}");
 					continue;
 				}
-				
+
 				charArray[i] = tempChar;
 			}
 			
@@ -268,8 +275,9 @@ namespace TextSpriteExport
 					curCnt = 0;
 				}
 			}
-
-			TextBlockTest.Content = finalOutputSB.ToString();
+			
+			//Underscore shows here!!
+			TextBlockTest.Text = finalOutputSB.ToString();
 			
 		}
 		private void CBFontFamily_SelectionChanged(object sender, SelectionChangedEventArgs e){
@@ -363,7 +371,8 @@ namespace TextSpriteExport
 				for(int chari=0; chari<charSizes.Length; chari++){
 					charSizes[chari] = (char)chari;
 
-					if (char.IsWhiteSpace(charSizes[chari]) == true){
+					if (char.IsWhiteSpace(charSizes[chari]) == true || char.IsControl(charSizes[chari]) == true) {
+						//MessageBox.Show($"Char: {charSizes[chari].ToString()} -- Num: {chari.ToString()}");
 						continue;
 					}
 
@@ -384,7 +393,7 @@ namespace TextSpriteExport
 						widthFound = true;
 					}else{
 						if (Math.Round(formattedText.Width, 2) != fontWidth && formattedText.Width > 0) {
-							//MessageBox.Show($"{formattedText.Width} -- {fontWidth}");
+							//MessageBox.Show($"Char: {charSizes[chari].ToString()} -- Num: {chari.ToString()} -- Width: {formattedText.Width} -- Prev Width: {fontWidth}");
 							return false;
 						}
 					}
@@ -396,8 +405,6 @@ namespace TextSpriteExport
 
 			CharDimensions.Content = $"Character Width: {fontWidth} Character Height: {fontHeightMax}";
 			
-			//ExportBackground.Height = columnCount > 0 ? fontHeightMax * (TextBlockTest.Content.ToString().Length/2) : fontHeightMax;
-
 			return true;
 		}
 

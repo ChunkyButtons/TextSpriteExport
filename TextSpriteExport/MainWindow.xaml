@@ -28,7 +28,7 @@
 				<CheckBox x:Name="CheckBoxItalic" Content="Italic" Canvas.Left="74" Canvas.Top="37" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="CheckBoxItalic_Checked" Unchecked="CheckBoxItalic_Unchecked" Margin="15,0,0,0"/>
 				<CheckBox x:Name="CheckBoxGrid" Content="Show Grid" Canvas.Left="74" Canvas.Top="37" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Click="CheckBoxGrid_Click"/>
 				<CheckBox x:Name="CheckBoxSnap" Content="Snap to Device Pixels" Canvas.Left="74" Canvas.Top="37" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Checked="CheckBoxSnap_Checked" Unchecked="CheckBoxSnap_Unchecked" IsChecked="True"/>
-				<CheckBox x:Name="CheckBoxAscii" Content="Use Ascii" Canvas.Left="74" Canvas.Top="37" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,10,0" Checked="CheckBoxAscii_Checked" Unchecked="CheckBoxAscii_Unchecked"/>
+				<CheckBox x:Name="CheckBoxAscii" Content="Use ISO-8859-1 (256 char max)" Canvas.Left="74" Canvas.Top="37" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,10,0" Checked="CheckBoxAscii_Checked" Unchecked="CheckBoxAscii_Unchecked"/>
 			</StackPanel>
 			<StackPanel Orientation="Horizontal">
 				<StackPanel Orientation="Vertical">
@@ -61,7 +61,7 @@
 			<ScrollViewer x:Name="SVRender" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Width="600" Height="298" HorizontalAlignment="Left" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" Foreground="Black">
 				<Grid x:Name="RenderCanvas" HorizontalAlignment="Left" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True">
 					<Rectangle x:Name="ExportBackground" Fill="Magenta"/>
-					<Label x:Name="TextBlockTest" FontFamily="Consolas" Content="Text Output" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="24"/>
+					<TextBlock x:Name="TextBlockTest" FontFamily="Consolas" Text="Text Output" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="24"/>
 					<Canvas x:Name="SpriteGrid" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 				</Grid>
 			</ScrollViewer>
