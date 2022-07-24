@@ -22,8 +22,6 @@
     * Character Width and Height labels: will show what the current value is for each character. If using non-monospaced fonts this will be inaccurate. Rounded to two decimal places. The height will always use the highest value height of all the characters.
     
 ### FYI
-* Export Preview lead/end spacing may not appear correct in the box, but should be exported correctly. 
+* Export Preview lead/end spacing may look truncated, but should be exported correctly. 
 * If you have any issues or find any bugs, please let me know
 * If you have any ideas for improvements, feel free to suggest them
-
-If anyone knows why some fonts and not others have a ton of leading space, please let me know. I can't figure out the issue.
