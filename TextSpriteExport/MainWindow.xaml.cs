@@ -55,9 +55,9 @@ namespace TextSpriteExport
 			CBTextFormat.Items.Add("Ideal");
 			CBTextFormat.SelectedIndex = 0;
 
+			CBTextRendering.Items.Add("ClearType");
 			CBTextRendering.Items.Add("Aliased");
 			CBTextRendering.Items.Add("Grayscale");
-			CBTextRendering.Items.Add("ClearType");
 			CBTextRendering.SelectedIndex = 0;
 
 			CBTextHinting.Items.Add("Fixed");
@@ -213,25 +213,22 @@ namespace TextSpriteExport
 
 			string stringRequest = Encoding.ASCII.GetString(asciiArray).Trim();
 
-			if (columnCount > 0) {
-				StringBuilder finalOutputSB = new StringBuilder();
+			StringBuilder finalOutputSB = new StringBuilder();
 
-				int curCnt = 0;
-				for (int coli = userCharMin; coli < stringRequest.Length; coli++) {
-					finalOutputSB.Append(stringRequest[coli]);
-					curCnt++;
+			int curCnt = 0;
+			for (int coli = userCharMin; coli < stringRequest.Length; coli++) {
+				finalOutputSB.Append(stringRequest[coli]);
+				curCnt++;
 
-					if (curCnt == columnCount && coli != stringRequest.Length - 1) {
-						//Add newline for each column break, except when at the end of the string
-						finalOutputSB.Append("\n");
-						curCnt = 0;
-					}
+				if (curCnt == columnCount && coli != stringRequest.Length - 1 && columnCount > 0) {
+					//Add newline for each column break, except when at the end of the string
+					finalOutputSB.Append("\n");
+					curCnt = 0;
 				}
-
-				TextBlockTest.Content = finalOutputSB.ToString();
-			} else {
-				TextBlockTest.Content = stringRequest;
 			}
+
+			TextBlockTest.Content = finalOutputSB.ToString();
+	
 		}
 
 		private void GenerateCharText(){
@@ -258,25 +255,22 @@ namespace TextSpriteExport
 			
 			string stringRequest = new string(charArray);
 
-			if (columnCount > 0){
-				StringBuilder finalOutputSB = new StringBuilder();
+			StringBuilder finalOutputSB = new StringBuilder();
 
-				int curCnt = 0;
-				for(int coli=userCharMin; coli< stringRequest.Length; coli++){
-					finalOutputSB.Append(stringRequest[coli]);
-					curCnt++;
+			int curCnt = 0;
+			for(int coli=userCharMin; coli< stringRequest.Length; coli++){
+				finalOutputSB.Append(stringRequest[coli]);
+				curCnt++;
 				
-					if(curCnt == columnCount && coli != stringRequest.Length-1) {
-						//Add newline for each column break, except when at the end of the string
-						finalOutputSB.Append("\n");
-						curCnt = 0;
-					}
+				if(curCnt == columnCount && coli != stringRequest.Length-1 && columnCount > 0) {
+					//Add newline for each column break, except when at the end of the string
+					finalOutputSB.Append("\n");
+					curCnt = 0;
 				}
-
-				TextBlockTest.Content = finalOutputSB.ToString();
-			} else{
-				TextBlockTest.Content = stringRequest;
 			}
+
+			TextBlockTest.Content = finalOutputSB.ToString();
+			
 		}
 		private void CBFontFamily_SelectionChanged(object sender, SelectionChangedEventArgs e){
 			//ComboBox cbFontFamilyTemp = (ComboBox)sender;
